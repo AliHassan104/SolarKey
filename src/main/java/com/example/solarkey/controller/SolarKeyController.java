@@ -20,11 +20,6 @@ public class SolarKeyController {
     @Autowired
     private SolarKeyService solarKeyService;
 
-//    @PostMapping
-//    public ResponseEntity<SolarKeyDto> addSolarKey(SolarKey solarKey){
-//        return ResponseEntity.ok(solarKeyService.addSolarKey(solarKey));
-//    }
-
     @PostMapping
     public ResponseEntity<SolarKeyDto> addSolarKey(@RequestBody SolarKeyDto solarKeyDto){
         try{
