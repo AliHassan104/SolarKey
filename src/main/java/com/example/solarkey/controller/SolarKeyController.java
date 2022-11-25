@@ -36,24 +36,24 @@ public class SolarKeyController {
     }
 
     @GetMapping
-    public ResponseEntity<List<SolarKey>> getAchievements(){
+    public ResponseEntity<List<SolarKey>> getSolarKey(){
         List<SolarKey> solarKey= solarKeyService.getAllSolarKey();
         return ResponseEntity.ok(solarKey);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SolarKeyDto> getAchievementsById(@PathVariable Long id) throws Exception {
+    public ResponseEntity<SolarKeyDto> getSolarKeyById(@PathVariable Long id) throws Exception {
         SolarKeyDto solarKey = solarKeyService.getSolarKeyById(id);
         return  ResponseEntity.ok(solarKey);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteAchievementById(@PathVariable Long id) throws Exception {
+    public ResponseEntity<String> deleteSolarKeyById(@PathVariable Long id) throws Exception {
         return ResponseEntity.ok(solarKeyService.deleteSolarKeyById(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SolarKeyDto> updateAreaById(@PathVariable Long id,@RequestBody SolarKeyDto solarKeyDto){
+    public ResponseEntity<SolarKeyDto> updateSolarKeyById(@PathVariable Long id,@RequestBody SolarKeyDto solarKeyDto){
         try{
             return ResponseEntity.ok(solarKeyService.updateSolarKeyById(id,solarKeyDto));
         }catch (Exception e){
